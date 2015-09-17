@@ -1,0 +1,295 @@
+////////////////////////////////////////////////////////////////////////////////
+// Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+////////////////////////////////////////////////////////////////////////////////
+//   ____  ____ 
+//  /   /\/   / 
+// /___/  \  /    Vendor: Xilinx 
+// \   \   \/     Version : 14.7
+//  \   \         Application : sch2hdl
+//  /   /         Filename : Calculator_sch.vf
+// /___/   /\     Timestamp : 06/04/2015 09:44:59
+// \   \  /  \ 
+//  \___\/\___\ 
+//
+//Command: sch2hdl -intstyle ise -family artix7 -verilog P:/courses/ENEL373/ALU/Calculator_sch.vf -w P:/courses/ENEL373/ALU/Calculator_sch.sch
+//Design Name: Calculator_sch
+//Device: artix7
+//Purpose:
+//    This verilog netlist is translated from an ECS schematic.It can be 
+//    synthesized and simulated, but it should not be modified. 
+//
+`timescale 1ns / 1ps
+
+module Calculator_sch(btnc, 
+                      btnd, 
+                      IN_CLK, 
+                      IN_VCC, 
+                      SW_0, 
+                      SW_1, 
+                      SW_2, 
+                      SW_3, 
+                      SW_4, 
+                      SW_5, 
+                      SW_6, 
+                      SW_7, 
+                      SW_8, 
+                      SW_9, 
+                      SW_10, 
+                      SW_11, 
+                      SW_12, 
+                      SW_13, 
+                      SW_14, 
+                      SW_15, 
+                      AN0, 
+                      AN1, 
+                      AN2, 
+                      AN3, 
+                      AN4, 
+                      AN5, 
+                      AN6, 
+                      AN7, 
+                      CA, 
+                      CB, 
+                      CC, 
+                      CD, 
+                      CE, 
+                      CF, 
+                      CG, 
+                      LED1, 
+                      LED2, 
+                      LED3, 
+                      LED4);
+
+    input btnc;
+    input btnd;
+    input IN_CLK;
+    input IN_VCC;
+    input SW_0;
+    input SW_1;
+    input SW_2;
+    input SW_3;
+    input SW_4;
+    input SW_5;
+    input SW_6;
+    input SW_7;
+    input SW_8;
+    input SW_9;
+    input SW_10;
+    input SW_11;
+    input SW_12;
+    input SW_13;
+    input SW_14;
+    input SW_15;
+   output AN0;
+   output AN1;
+   output AN2;
+   output AN3;
+   output AN4;
+   output AN5;
+   output AN6;
+   output AN7;
+   output CA;
+   output CB;
+   output CC;
+   output CD;
+   output CE;
+   output CF;
+   output CG;
+   output LED1;
+   output LED2;
+   output LED3;
+   output LED4;
+   
+   wire [15:0] Bin;
+   wire [7:0] MUX;
+   wire [1:7] SEG;
+   wire XLXN_5;
+   wire XLXN_6;
+   wire [15:0] XLXN_60;
+   wire XLXN_135;
+   wire XLXN_136;
+   wire XLXN_148;
+   wire [15:0] XLXN_151;
+   wire [3:0] XLXN_152;
+   wire [15:0] XLXN_153;
+   wire [15:0] XLXN_154;
+   wire XLXN_155;
+   wire [1:0] XLXN_156;
+   wire XLXN_157;
+   wire XLXN_158;
+   wire XLXN_159;
+   wire XLXN_160;
+   wire XLXN_163;
+   wire XLXN_164;
+   
+   DISP7SEG  XLXI_1 (.BIN(XLXN_60[15:0]), 
+                    .CLK(XLXN_136), 
+                    .N_FLAG(XLXN_6), 
+                    .O_FLAG(XLXN_5), 
+                    .RST(XLXN_163), 
+                    .MUX(MUX[7:0]), 
+                    .SEG(SEG[1:7]));
+   MUX16  XLXI_2 (.A(XLXN_153[15:0]), 
+                 .B(XLXN_154[15:0]), 
+                 .SEL(XLXN_152[3:0]), 
+                 .N_FLAG(XLXN_6), 
+                 .O_FLAG(XLXN_5), 
+                 .RESULT(XLXN_151[15:0]));
+   controller  XLXI_3 (.BUTT_IN(XLXN_164), 
+                      .CLK(XLXN_136), 
+                      .DATA_IN(Bin[15:0]), 
+                      .RST(XLXN_163), 
+                      .OPCODE_OUT(XLXN_152[3:0]), 
+                      .OPERAND_1_OUT(XLXN_153[15:0]), 
+                      .OPERAND_2_OUT(XLXN_154[15:0]), 
+                      .SEL(XLXN_155), 
+                      .STATE(XLXN_156[1:0]));
+   clock_divider_100M_to_480  XLXI_4 (.enable(XLXN_148), 
+                                     .in_clock(XLXN_135), 
+                                     .out_clock(XLXN_136));
+   (* IOSTANDARD = "DEFAULT" *) (* CAPACITANCE = "DONT_CARE" *) (* SLEW = 
+         "SLOW" *) (* DRIVE = "12" *) 
+   OBUF  XLXI_5 (.I(SEG[1]), 
+                .O(CA));
+   (* IOSTANDARD = "DEFAULT" *) (* CAPACITANCE = "DONT_CARE" *) (* SLEW = 
+         "SLOW" *) (* DRIVE = "12" *) 
+   OBUF  XLXI_6 (.I(SEG[2]), 
+                .O(CB));
+   (* IOSTANDARD = "DEFAULT" *) (* CAPACITANCE = "DONT_CARE" *) (* SLEW = 
+         "SLOW" *) (* DRIVE = "12" *) 
+   OBUF  XLXI_7 (.I(SEG[3]), 
+                .O(CC));
+   (* IOSTANDARD = "DEFAULT" *) (* CAPACITANCE = "DONT_CARE" *) (* SLEW = 
+         "SLOW" *) (* DRIVE = "12" *) 
+   OBUF  XLXI_8 (.I(SEG[4]), 
+                .O(CD));
+   (* IOSTANDARD = "DEFAULT" *) (* CAPACITANCE = "DONT_CARE" *) (* SLEW = 
+         "SLOW" *) (* DRIVE = "12" *) 
+   OBUF  XLXI_9 (.I(SEG[5]), 
+                .O(CE));
+   (* IOSTANDARD = "DEFAULT" *) (* CAPACITANCE = "DONT_CARE" *) (* SLEW = 
+         "SLOW" *) (* DRIVE = "12" *) 
+   OBUF  XLXI_10 (.I(SEG[6]), 
+                 .O(CF));
+   (* IOSTANDARD = "DEFAULT" *) (* CAPACITANCE = "DONT_CARE" *) (* SLEW = 
+         "SLOW" *) (* DRIVE = "12" *) 
+   OBUF  XLXI_11 (.I(SEG[7]), 
+                 .O(CG));
+   (* IOSTANDARD = "DEFAULT" *) (* CAPACITANCE = "DONT_CARE" *) (* SLEW = 
+         "SLOW" *) (* DRIVE = "12" *) 
+   OBUF  XLXI_12 (.I(MUX[0]), 
+                 .O(AN0));
+   (* IOSTANDARD = "DEFAULT" *) (* CAPACITANCE = "DONT_CARE" *) (* SLEW = 
+         "SLOW" *) (* DRIVE = "12" *) 
+   OBUF  XLXI_13 (.I(MUX[1]), 
+                 .O(AN1));
+   (* IOSTANDARD = "DEFAULT" *) (* CAPACITANCE = "DONT_CARE" *) (* SLEW = 
+         "SLOW" *) (* DRIVE = "12" *) 
+   OBUF  XLXI_14 (.I(MUX[2]), 
+                 .O(AN2));
+   (* IOSTANDARD = "DEFAULT" *) (* CAPACITANCE = "DONT_CARE" *) (* SLEW = 
+         "SLOW" *) (* DRIVE = "12" *) 
+   OBUF  XLXI_15 (.I(MUX[3]), 
+                 .O(AN3));
+   (* IOSTANDARD = "DEFAULT" *) (* CAPACITANCE = "DONT_CARE" *) (* SLEW = 
+         "SLOW" *) (* DRIVE = "12" *) 
+   OBUF  XLXI_16 (.I(MUX[4]), 
+                 .O(AN4));
+   (* IOSTANDARD = "DEFAULT" *) (* CAPACITANCE = "DONT_CARE" *) (* SLEW = 
+         "SLOW" *) (* DRIVE = "12" *) 
+   OBUF  XLXI_17 (.I(MUX[5]), 
+                 .O(AN5));
+   (* IOSTANDARD = "DEFAULT" *) (* CAPACITANCE = "DONT_CARE" *) (* SLEW = 
+         "SLOW" *) (* DRIVE = "12" *) 
+   OBUF  XLXI_18 (.I(MUX[6]), 
+                 .O(AN6));
+   (* IOSTANDARD = "DEFAULT" *) (* CAPACITANCE = "DONT_CARE" *) (* SLEW = 
+         "SLOW" *) (* DRIVE = "12" *) 
+   OBUF  XLXI_19 (.I(MUX[7]), 
+                 .O(AN7));
+   (* IOSTANDARD = "DEFAULT" *) (* CAPACITANCE = "DONT_CARE" *) 
+   IBUF  XLXI_20 (.I(SW_0), 
+                 .O(Bin[0]));
+   (* IOSTANDARD = "DEFAULT" *) (* CAPACITANCE = "DONT_CARE" *) 
+   IBUF  XLXI_21 (.I(SW_1), 
+                 .O(Bin[1]));
+   (* IOSTANDARD = "DEFAULT" *) (* CAPACITANCE = "DONT_CARE" *) 
+   IBUF  XLXI_22 (.I(SW_2), 
+                 .O(Bin[2]));
+   (* IOSTANDARD = "DEFAULT" *) (* CAPACITANCE = "DONT_CARE" *) 
+   IBUF  XLXI_23 (.I(SW_3), 
+                 .O(Bin[3]));
+   (* IOSTANDARD = "DEFAULT" *) (* CAPACITANCE = "DONT_CARE" *) 
+   IBUF  XLXI_24 (.I(SW_4), 
+                 .O(Bin[4]));
+   (* IOSTANDARD = "DEFAULT" *) (* CAPACITANCE = "DONT_CARE" *) 
+   IBUF  XLXI_25 (.I(SW_5), 
+                 .O(Bin[5]));
+   (* IOSTANDARD = "DEFAULT" *) (* CAPACITANCE = "DONT_CARE" *) 
+   IBUF  XLXI_26 (.I(SW_6), 
+                 .O(Bin[6]));
+   (* IOSTANDARD = "DEFAULT" *) (* CAPACITANCE = "DONT_CARE" *) 
+   IBUF  XLXI_27 (.I(SW_7), 
+                 .O(Bin[7]));
+   (* IOSTANDARD = "DEFAULT" *) (* CAPACITANCE = "DONT_CARE" *) 
+   IBUF  XLXI_28 (.I(SW_8), 
+                 .O(Bin[8]));
+   (* IOSTANDARD = "DEFAULT" *) (* CAPACITANCE = "DONT_CARE" *) 
+   IBUF  XLXI_29 (.I(SW_9), 
+                 .O(Bin[9]));
+   (* IOSTANDARD = "DEFAULT" *) (* CAPACITANCE = "DONT_CARE" *) 
+   IBUF  XLXI_30 (.I(SW_10), 
+                 .O(Bin[10]));
+   (* IOSTANDARD = "DEFAULT" *) (* CAPACITANCE = "DONT_CARE" *) 
+   IBUF  XLXI_31 (.I(SW_11), 
+                 .O(Bin[11]));
+   (* IOSTANDARD = "DEFAULT" *) (* CAPACITANCE = "DONT_CARE" *) 
+   IBUF  XLXI_32 (.I(SW_12), 
+                 .O(Bin[12]));
+   (* IOSTANDARD = "DEFAULT" *) (* CAPACITANCE = "DONT_CARE" *) 
+   IBUF  XLXI_33 (.I(SW_13), 
+                 .O(Bin[13]));
+   (* IOSTANDARD = "DEFAULT" *) (* CAPACITANCE = "DONT_CARE" *) 
+   IBUF  XLXI_34 (.I(SW_14), 
+                 .O(Bin[14]));
+   (* IOSTANDARD = "DEFAULT" *) (* CAPACITANCE = "DONT_CARE" *) 
+   IBUF  XLXI_35 (.I(SW_15), 
+                 .O(Bin[15]));
+   (* IOSTANDARD = "DEFAULT" *) (* CAPACITANCE = "DONT_CARE" *) 
+   IBUF  XLXI_72 (.I(IN_VCC), 
+                 .O(XLXN_148));
+   (* IOSTANDARD = "DEFAULT" *) (* CAPACITANCE = "DONT_CARE" *) 
+   IBUFG #( .IBUF_LOW_PWR("TRUE") ) XLXI_73 (.I(IN_CLK), 
+                  .O(XLXN_135));
+   state_decoder  XLXI_74 (.STATE(XLXN_156[1:0]), 
+                          .LED1(XLXN_157), 
+                          .LED2(XLXN_158), 
+                          .LED3(XLXN_159), 
+                          .LED4(XLXN_160));
+   (* IOSTANDARD = "DEFAULT" *) (* CAPACITANCE = "DONT_CARE" *) (* SLEW = 
+         "SLOW" *) (* DRIVE = "12" *) 
+   OBUF  XLXI_75 (.I(XLXN_157), 
+                 .O(LED1));
+   (* IOSTANDARD = "DEFAULT" *) (* CAPACITANCE = "DONT_CARE" *) (* SLEW = 
+         "SLOW" *) (* DRIVE = "12" *) 
+   OBUF  XLXI_76 (.I(XLXN_158), 
+                 .O(LED2));
+   (* IOSTANDARD = "DEFAULT" *) (* CAPACITANCE = "DONT_CARE" *) (* SLEW = 
+         "SLOW" *) (* DRIVE = "12" *) 
+   OBUF  XLXI_77 (.I(XLXN_159), 
+                 .O(LED3));
+   (* IOSTANDARD = "DEFAULT" *) (* CAPACITANCE = "DONT_CARE" *) (* SLEW = 
+         "SLOW" *) (* DRIVE = "12" *) 
+   OBUF  XLXI_78 (.I(XLXN_160), 
+                 .O(LED4));
+   MUX_DISP  XLXI_80 (.D0(Bin[15:0]), 
+                     .D1(XLXN_151[15:0]), 
+                     .SEL(XLXN_155), 
+                     .O(XLXN_60[15:0]));
+   (* IOSTANDARD = "DEFAULT" *) (* CAPACITANCE = "DONT_CARE" *) 
+   IBUF  XLXI_81 (.I(btnc), 
+                 .O(XLXN_163));
+   (* IOSTANDARD = "DEFAULT" *) (* CAPACITANCE = "DONT_CARE" *) 
+   IBUF  XLXI_82 (.I(btnd), 
+                 .O(XLXN_164));
+endmodule

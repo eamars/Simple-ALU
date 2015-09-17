@@ -1,0 +1,12 @@
+[Inputs]
+CLK
+RST
+BUTT_IN
+=DATA_IN[15:0]=
+[Outputs]
+SEL
+=OPCODE_OUT[3:0]=
+=OPERAND_1_OUT[15:0]=
+=OPERAND_2_OUT[15:0]=
+=STATE[1:0]=
+[BiDir]

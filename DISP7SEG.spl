@@ -1,0 +1,10 @@
+[Inputs]
+O_FLAG
+N_FLAG
+CLK
+RST
+=BIN[15:0]=
+[Outputs]
+=SEG[1:7]=
+=MUX[7:0]=
+[BiDir]

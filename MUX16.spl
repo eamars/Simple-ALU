@@ -1,0 +1,9 @@
+[Inputs]
+=A[15:0]=
+=B[15:0]=
+=SEL[3:0]=
+[Outputs]
+O_FLAG
+N_FLAG
+=RESULT[15:0]=
+[BiDir]

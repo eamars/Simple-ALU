@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -lib "secureip" -o "W:/Xilinx/ALU/multiplexer16_tb_isim_beh.exe" -prj "W:/Xilinx/ALU/multiplexer16_tb_beh.prj" "work.multiplexer16_tb" 

@@ -1,0 +1,30 @@
+Running: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -lib secureip -o W:/Xilinx/ALU/multiplexer16_tb_isim_beh.exe -prj W:/Xilinx/ALU/multiplexer16_tb_beh.prj work.multiplexer16_tb 
+ISim P.20131013 (signature 0x7708f090)
+Number of CPUs detected in this system: 8
+Turning on mult-threading, number of parallel sub-compilation jobs: 16 
+Determining compilation order of HDL files
+Parsing VHDL file "W:/Xilinx/ALU/full_adder.vhd" into library work
+Parsing VHDL file "W:/Xilinx/ALU/subtractor16.vhd" into library work
+Parsing VHDL file "W:/Xilinx/ALU/full_adder16.vhd" into library work
+Parsing VHDL file "W:/Xilinx/ALU/bitwise_xor16.vhd" into library work
+Parsing VHDL file "W:/Xilinx/ALU/bitwise_or16.vhd" into library work
+Parsing VHDL file "W:/Xilinx/ALU/bitwise_and16.vhd" into library work
+Parsing VHDL file "W:/Xilinx/ALU/multiplexer16.vhd" into library work
+Parsing VHDL file "W:/Xilinx/ALU/multiplexer16_tb.vhd" into library work
+Starting static elaboration
+Completed static elaboration
+Compiling package standard
+Compiling package std_logic_1164
+Compiling architecture behavioral of entity full_adder [full_adder_default]
+Compiling architecture behavioral of entity FA16 [fa16_default]
+Compiling architecture behavioral of entity AND16 [and16_default]
+Compiling architecture behavioral of entity XOR16 [xor16_default]
+Compiling architecture behavioral of entity OR16 [or16_default]
+Compiling architecture behavioral of entity SUB16 [sub16_default]
+Compiling architecture behavioral of entity MUX16 [mux16_default]
+Compiling architecture behavior of entity multiplexer16_tb
+Time Resolution for simulation is 1ps.
+Compiled 17 VHDL Units
+Built simulation executable W:/Xilinx/ALU/multiplexer16_tb_isim_beh.exe
+Fuse Memory Usage: 28620 KB
+Fuse CPU Usage: 437 ms
